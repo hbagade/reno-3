@@ -1,0 +1,48 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "branchPrefix": "renovate-",
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "Dockerfile"
+      ],
+      "matchStrings": [
+
+        "git clone -b (?<currentValue>v[0-9.]*?) https://github.com/hudeldudel/postman-exporter.git /app"
+
+      ],
+      "depNameTemplate": "hudeldudel/postman-exporter",
+      "lookupNameTemplate": "hudeldudel/postman-exporter",
+      "datasourceTemplate": "github-tags",
+      "registryUrlTemplate": "https://github.com/"
+    }
+  ],
+  "packageRules": [
+    {
+      "datasources": [
+        "github-tags"
+      ],
+      "updateTypes": [
+        "major"
+      ],
+      "groupName": "postman-exporter major updates",
+      "automerge": true
+    },
+    {
+      "datasources": [
+        "github-tags"
+      ],
+      "updateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump"
+      ],
+      "groupName": "postman-exporter non-major updates",
+      "automerge": true
+    }
+  ]
+}
