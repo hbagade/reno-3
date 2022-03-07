@@ -6,7 +6,7 @@ RUN mkdir /app
 # Installing git & clone postman-exorter repository
 RUN apk update \ 
  && apk add git \
- && git clone -b v0.1.3 https://github.com/hudeldudel/postman-exporter.git /app \
+ && git clone -b v0.2.2 https://github.com/hudeldudel/postman-exporter.git /app \
  && npm install -g newman
 
 # Working directory as "/postman-exporter"
